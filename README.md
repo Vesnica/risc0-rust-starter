@@ -1,3 +1,6 @@
+# Customized RISC Zero Rust Starter
+Need apply https://github.com/risc0/risc0/pull/230 first.
+
 # RISC Zero Rust Starter
 
 The `risc0-rust-starter` repository is a minimal starting project for zero-knowledge software development. In this RISC Zero "Hello World" project, we use zero-knowledge proof techniques to prove that we know the factors of some composite number `N`, without revealing what the factors are. 
