@@ -10,6 +10,7 @@ risc0-zkvm = "0.11.1"
 risc0-zkp = { version = "0.11.1", default-features = false }
 confy = "0.4"
 sha2 = "0.10.2"
+rand = { version = "0.8.5", default-features = false }
 
 [[bin]]
 name = "prover_add"
@@ -34,3 +35,11 @@ path = "src/prover_sig.rs"
 [[bin]]
 name = "verifier_sig"
 path = "src/verifier_sig.rs"
+
+[[bin]]
+name = "prover_pw"
+path = "src/prover_pw.rs"
+
+[[bin]]
+name = "verifier_pw"
+path = "src/verifier_pw.rs"

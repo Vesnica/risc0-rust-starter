@@ -12,3 +12,6 @@ risc0-build = "0.11.1"
 common = { path = "../../common" }
 risc0-zkvm-guest = "0.11.1"
 
+[profile.release]
+lto = true
+opt-level = "z"
