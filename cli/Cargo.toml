@@ -1,0 +1,36 @@
+[package]
+name = "cli"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+methods = { path = "../methods" }
+common = { path = "../common" }
+risc0-zkvm = "0.11.1"
+risc0-zkp = { version = "0.11.1", default-features = false }
+confy = "0.4"
+sha2 = "0.10.2"
+
+[[bin]]
+name = "prover_add"
+path = "src/prover_add.rs"
+
+[[bin]]
+name = "verifier_add"
+path = "src/verifier_add.rs"
+
+[[bin]]
+name = "prover_mul"
+path = "src/prover_mul.rs"
+
+[[bin]]
+name = "verifier_mul"
+path = "src/verifier_mul.rs"
+
+[[bin]]
+name = "prover_sig"
+path = "src/prover_sig.rs"
+
+[[bin]]
+name = "verifier_sig"
+path = "src/verifier_sig.rs"

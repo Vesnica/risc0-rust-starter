@@ -1,3 +1,5 @@
 Cargo.lock
 methods/guest/Cargo.lock
 target/
+*.swp
+proof.toml
