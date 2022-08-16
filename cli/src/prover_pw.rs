@@ -1,5 +1,5 @@
 use common::{encode_hex_u32, encode_hex_u8, PasswordRequest, Proof};
-use methods::{PASSWORD_ELF, PASSWORD_ID};
+use methods::{PASSWORD_ELF, PASSWORD_ID, PASSWORD_PATH};
 use rand::{thread_rng, RngCore};
 use risc0_zkp::core::sha::Digest;
 use risc0_zkvm::host::Prover;
@@ -21,6 +21,7 @@ fn main() {
     let vec = to_vec(&request).unwrap();
     prover.add_input(&vec).unwrap();
 
+    println!("Executing {}", PASSWORD_PATH.split('/').last().unwrap());
     let receipt = prover.run().unwrap();
     let password_hash: Digest = from_slice(&receipt.get_journal_vec().unwrap()).unwrap();
     println!("Password hash is: {}", &password_hash);
