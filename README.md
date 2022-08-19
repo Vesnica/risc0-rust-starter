@@ -1,5 +1,5 @@
 # Customized RISC Zero Rust Starter
-Need apply https://github.com/risc0/risc0/pull/230 first.
+Need apply https://github.com/risc0/risc0/pull/244 first.
 
 # RISC Zero Rust Starter
 
