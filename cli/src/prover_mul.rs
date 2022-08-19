@@ -1,5 +1,5 @@
 use common::{encode_hex_u32, encode_hex_u8, Proof};
-use methods::{MULTIPLY_ELF, MULTIPLY_ID, MULTIPLY_PATH};
+use methods::{MULTIPLY_CONTENTS, MULTIPLY_ID, MULTIPLY_PATH};
 use risc0_zkvm::host::Prover;
 use risc0_zkvm::serde::{from_slice, to_vec};
 
@@ -7,7 +7,7 @@ fn main() {
     let a: u64 = 1023;
     let b: u64 = 23;
 
-    let mut prover = Prover::new(MULTIPLY_ELF, MULTIPLY_ID).unwrap();
+    let mut prover = Prover::new(MULTIPLY_CONTENTS, MULTIPLY_ID).unwrap();
     prover.add_input(to_vec(&a).unwrap().as_slice()).unwrap();
     prover.add_input(to_vec(&b).unwrap().as_slice()).unwrap();
 

@@ -1,5 +1,5 @@
 use common::{encode_hex_u32, encode_hex_u8, Message, Passphrase, Proof, SigningRequest};
-use methods::{SIGNATURE_ELF, SIGNATURE_ID, SIGNATURE_PATH};
+use methods::{SIGNATURE_CONTENTS, SIGNATURE_ID, SIGNATURE_PATH};
 use risc0_zkvm::host::{Prover, Receipt, Result};
 use risc0_zkvm::serde::to_vec;
 use sha2::{Digest, Sha256};
@@ -25,7 +25,7 @@ pub fn sign(pass_str: impl AsRef<[u8]>, msg_str: impl AsRef<[u8]>) -> Result<Rec
         msg,
     };
 
-    let mut prover = Prover::new(SIGNATURE_ELF, SIGNATURE_ID)?;
+    let mut prover = Prover::new(SIGNATURE_CONTENTS, SIGNATURE_ID)?;
     let vec = to_vec(&params).unwrap();
     prover.add_input(vec.as_slice())?;
     println!("Executing {}", SIGNATURE_PATH.split('/').last().unwrap());

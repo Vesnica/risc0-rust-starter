@@ -1,5 +1,5 @@
 use common::{encode_hex_u32, encode_hex_u8, Proof};
-use methods::{ADD_MOD_ELF, ADD_MOD_ID, ADD_MOD_PATH};
+use methods::{ADD_MOD_CONTENTS, ADD_MOD_ID, ADD_MOD_PATH};
 use risc0_zkvm::host::Prover;
 use risc0_zkvm::serde::{from_slice, to_vec};
 
@@ -8,7 +8,7 @@ fn main() {
     let b: u64 = 2;
     let m: u64 = 1024;
 
-    let mut prover = Prover::new(ADD_MOD_ELF, ADD_MOD_ID).unwrap();
+    let mut prover = Prover::new(ADD_MOD_CONTENTS, ADD_MOD_ID).unwrap();
     prover.add_input(to_vec(&a).unwrap().as_slice()).unwrap();
     prover.add_input(to_vec(&b).unwrap().as_slice()).unwrap();
     prover.add_input(to_vec(&m).unwrap().as_slice()).unwrap();

@@ -1,5 +1,5 @@
 use common::{encode_hex_u32, encode_hex_u8, PasswordRequest, Proof};
-use methods::{PASSWORD_ELF, PASSWORD_ID, PASSWORD_PATH};
+use methods::{PASSWORD_CONTENTS, PASSWORD_ID, PASSWORD_PATH};
 use rand::{thread_rng, RngCore};
 use risc0_zkp::core::sha::Digest;
 use risc0_zkvm::host::Prover;
@@ -15,7 +15,7 @@ fn main() {
         salt,
     };
 
-    let mut prover = Prover::new(PASSWORD_ELF, PASSWORD_ID).unwrap();
+    let mut prover = Prover::new(PASSWORD_CONTENTS, PASSWORD_ID).unwrap();
 
     // Adding input to the prover makes it readable by the guest
     let vec = to_vec(&request).unwrap();
